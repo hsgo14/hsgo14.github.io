@@ -1,7 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    </head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <p>Redirecting you to the new page...</p>
+
+    <script type="text/javascript">
+        // 현재 호스트가 www.current.com인지 확인
+        if (window.location.protocol === 'https:' && window.location.hostname === 'www.current.com') {
+            // 현재 경로와 쿼리 문자열을 가져옵니다.
+            const path = window.location.pathname;
+            const query = window.location.search;
+
+            // 리다이렉트할 새 URL을 구성합니다.
+            const newUrl = 'http://www.redirect.com' + path + query;
+
+            // 새 URL로 리다이렉트합니다.
+            window.location.replace(newUrl);
+        } else {
+            // www.current.com이 아닌 경우 또는 HTTP 접속인 경우 아무것도 하지 않거나
+            // 다른 로직을 추가할 수 있습니다.
+            console.log('Not on www.current.com (HTTPS). No redirect performed.');
+        }
+    </script>
 </body>
 </html>
